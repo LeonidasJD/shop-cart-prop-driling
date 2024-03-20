@@ -34,6 +34,7 @@ function App() {
           price: product.price,
           quantity: 1,
         });
+        console.log(shoppingCart);
       }
 
       return {
@@ -70,14 +71,12 @@ function App() {
   const cartContext = {
     items:shoppingCart.items,
     addItemToCart: handleAddItemToCart,//kreiram konstantu koja ce predstavljati vrednost konteksta. COntext prihvata ajteme i jednu funkciju.
+    handleUpdateCart:handleUpdateCartItemQuantity,
   }
   return (
     <CartContext.Provider value={cartContext}>{/*context wrapper postavljamo kao wrapper komponenti gde zelimo da koristimo podatke iz contexta 
     u ovom slucaju zelimo da koristimo u cartu koji se nalazi u hederu. Vrednost Contexta jeste nase stanje koje cuva ajteme , isto kao i sto je zapravo context, zato mozemo da sada iscitamo kontext bilo gde */}
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
+      <Header/>
       <Shop >
       {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
