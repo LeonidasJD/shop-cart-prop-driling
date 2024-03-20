@@ -43,6 +43,12 @@ function App() {
     });
   }
 
+  function handleRemoveItemsFromCart(){
+    setShoppingCart({
+      items:[]
+    });
+  }
+
   function handleUpdateCartItemQuantity(productId, amount) {
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
@@ -72,6 +78,7 @@ function App() {
     items:shoppingCart.items,
     addItemToCart: handleAddItemToCart,//kreiram konstantu koja ce predstavljati vrednost konteksta. COntext prihvata ajteme i jednu funkciju.
     handleUpdateCart:handleUpdateCartItemQuantity,
+    removeAllCart:handleRemoveItemsFromCart,
   }
   return (
     <CartContext.Provider value={cartContext}>{/*context wrapper postavljamo kao wrapper komponenti gde zelimo da koristimo podatke iz contexta 

@@ -30,6 +30,7 @@ const {items} = useContext(CartContext);
         ref={modal}
         title="Your Cart"
         actions={modalActions}
+        removeBtnTitle={"Remove all from cart"}
       />
       <header id="main-header">
         <div id="main-title">

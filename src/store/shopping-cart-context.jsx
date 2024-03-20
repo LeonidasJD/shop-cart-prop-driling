@@ -4,5 +4,6 @@ export  const CartContext = createContext({ // ovaj context nam sluzi da iz app 
     items:[],
     addItemToCart: () =>{},
     handleUpdateCart:()=>{},
+    removeAllCart:()=>{},
 });
  
